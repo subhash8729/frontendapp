@@ -5,11 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer,toast } from 'react-toastify'
 import { io } from "socket.io-client"
 import { connectSocket } from '../socket/socket.js'
+import Loading from '../components/Loading.jsx'
 
 const Login = () => {
     // useEffect(()=>{
     //     localStorage.clear();
     // },[])
+    const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -24,13 +26,15 @@ const Login = () => {
             ))
         }
     const handle_submit = async(e) => {
+        setLoading(true)
         e.preventDefault();
         console.log(formData);
         const result = await axios.post("https://backendapp-xqax.onrender.com/login",formData).catch((err)=>{
+            setLoading(false)
             toast.error("login nhi ho paya");
         })
         if(result){
-            
+            setLoading(false)
             localStorage.setItem("token",result.data.token);
             // console.log("1. navigate to chat");
             navigate("/chat")
@@ -45,6 +49,7 @@ const Login = () => {
 
                 <Navbar />
                 <ToastContainer />
+                <Loading loading={loading} />
                 <div id='input-content' className='w-full h-screen font-satoshi flex items-center p-10 justify-between bg-[#222222]'>
                     <div id='input-div' className='w-1/2 flex items-center h-full' >
 

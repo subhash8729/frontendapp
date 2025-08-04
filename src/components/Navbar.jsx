@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <div>
       <div className='w-full h-24 bg-gray-800 text-white flex items-center justify-between space-x-4 px-7'>
-        <div className='w-[220px] h-full flex items-center space-x-4 ' >
+        <div className='w-[220px] h-full flex items-center space-x-4' >
           <div className='w-14 h-14 flex items-center justify-center overflow-hidden rounded-full'>
-            <img className='block w-14 h-14' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUpLZY4G_ZM8gYW3Mc68SG3cOUdnTYp1c9VQ&s" alt="logo" />
+            <img className='block p-1 w-14 h-14' src="/images/chatlogo.png" alt="logo" />
           </div>
           <div className='text-2xl bg-blue-500 rounded-4xl px-4 py-2 font-bold'>Chat App</div>
         </div>

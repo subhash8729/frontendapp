@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import axios from 'axios'
 import { toast,ToastContainer } from 'react-toastify'
+import Loading from '../components/Loading'
 
 const Signup = () => {
   const [clicked, setClicked] = useState(false);
   const formRef = useRef(null);
+  const [loading,setLoading] = useState(false)
 
 
   // const [response, setResponse] = useState(null);
@@ -73,14 +75,17 @@ const Signup = () => {
 // })
 
   const submit_form = async(e)=>{
+    setLoading(true)
     e.preventDefault();
       console.log("form data which has been send is ",formData);
       const response = await axios.post("https://backendapp-xqax.onrender.com/signup",formData).catch((err)=>{
         console.log("error is --> ",err);
+        setLoading(false)
         toast.error(err.response.data.message)
       })
       
       if(response){
+        setLoading(false)
         toast.success("SignUp successful")
       }
 
@@ -105,6 +110,7 @@ const Signup = () => {
     <div>   
       <Navbar />
       <ToastContainer />
+      <Loading loading={loading} />
       <div>
         <form action="" onKeyDown={handle_key} onSubmit={submit_form} onChange={handle_change}>
           <div id='input-content' className='w-full h-screen font-satoshi flex items-center p-10 justify-between bg-[#222222]'>

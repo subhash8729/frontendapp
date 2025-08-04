@@ -283,12 +283,12 @@ const chat = () => {
 
 
                     {/* --> logo line */}
-                    <div className='w-full h-[50px] items-center text-white font-bold tracking-wide gap-5 px-10 bg-green-500 flex'>
+                    <div className='w-full h-[50px] items-center text-white font-bold tracking-wide gap-5 px-10 bg-[#08024f] flex'>
                         <div>
                             <ArrowLeftCircleIcon onClick={() => { setDisplay(false) }} className='w-6 h-6' />
                         </div>
                         <div className=' w-[30px] h-[30px]'>
-                            <img className='w-full h-full' src="https://images.seeklogo.com/logo-png/16/2/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp logo" />
+                            <img className='w-full h-full' src="/images/chatlogo.png" alt="whatsapp logo" />
                         </div>
                         <div>Whatsapp</div>
                     </div>
