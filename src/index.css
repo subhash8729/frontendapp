@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('/fonts/Satoshi-Regular.ttf') format('woff2'),
+       url('/fonts/Satoshi-Regular.ttf') format('woff'),
+       url('/fonts/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+.font-satoshi {
+  font-family: 'Satoshi-Regular';
+}
+
+@media (max-width: 800px) {
+  /* this is for sign up page */
+  #input-content{
+    display: block;
+    }
+    #input-div{
+      width: 100%;
+    }
+    .inputs{
+      width: 70%;
+    }
+    .svg{
+      display: none;
+    }
+  
+}
+@media (max-width: 724px) {
+ /* this is for navbar */
+  #second-content{
+    display: none;
+  }
+
+  
+}
